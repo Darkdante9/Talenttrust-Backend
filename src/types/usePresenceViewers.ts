@@ -4,7 +4,7 @@ export interface Viewer {
   fadingOut: boolean;
 }
 
-interface UsePresenceViewersReturn extends Array<Viewer[] | ((viewers: Viewer[]) => void) | number> {
+export interface UsePresenceViewersReturn extends Array<Viewer[] | ((viewers: Viewer[]) => void) | number> {
   0: Viewer[];
   1: (viewers: Viewer[]) => void;
   2: number;
@@ -13,4 +13,4 @@ interface UsePresenceViewersReturn extends Array<Viewer[] | ((viewers: Viewer[])
   viewerCount: number;
 }
 
-export type UsePresenceViewers = () => UsePresenceViewersReturn;
+export type UsePresenceViewers = (initialViewers?: Viewer[]) => UsePresenceViewersReturn;
